@@ -141,6 +141,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libalsautils.so', 'libalsautils-v34.so'),
     'vendor/lib64/libdlbdsservice.so': blob_fixup()
     .replace_needed("libstagefright_foundation.so", "libstagefright_foundation-v33.so"),
+    'vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc': blob_fixup()
+        .regex_replace('odm', 'vendor'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
