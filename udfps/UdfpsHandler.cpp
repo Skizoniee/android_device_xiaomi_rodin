@@ -171,7 +171,10 @@ class XiaomiRodinUdfpsHandler : public UdfpsHandler {
         }).detach();
     }
 
-    void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) { setFingerDown(true); }
+    void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) {
+        if (mAuthSuccess) return;
+        setFingerDown(true);
+    }
 
     void onFingerUp() { setFingerDown(false); }
 
@@ -198,14 +201,22 @@ class XiaomiRodinUdfpsHandler : public UdfpsHandler {
         }
     }
 
-    void onAuthenticationSucceeded() { onFingerUp(); }
-
     void onAuthenticationFailed() { onFingerUp(); }
+
+    void onAuthenticationSucceeded() {
+        mAuthSuccess = true;
+        onFingerUp();
+        std::thread([this]() {
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
+            mAuthSuccess = false;
+        }).detach();
+    }
 
   private:
     fingerprint_device_t* mDevice;
     android::base::unique_fd disp_fd_;
     android::base::unique_fd touch_fd_;
+    bool mAuthSuccess = false;
 
     void setFodStatus(int value) {
         ioctl(touch_fd_.get(), TOUCH_IOC_SELECT_TOUCH_ID, MI_DISP_PRIMARY);
