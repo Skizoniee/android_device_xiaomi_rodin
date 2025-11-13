@@ -141,9 +141,6 @@
 /dev/ufs-bsg0                                                                                          u:object_r:teei_client_device:s0
 /data/vendor/mitee(/.*)?                                                                               u:object_r:mitee_data_file:s0
 
-# Vibrator
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.rodin u:object_r:hal_vibrator_default_exec:s0
-
 # WiFi
 /(vendor|system/vendor)/bin/hw/android\.hardware\.wifi-service-lazy-mediatek           u:object_r:hal_wifi_default_exec:s0
 
