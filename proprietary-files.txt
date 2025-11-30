@@ -2862,11 +2862,6 @@ vendor/firmware/vib_173/98_nfcCardSlow_RTP.bin
 vendor/firmware/vib_173/99_POCO_RTP.bin
 vendor/firmware/vib_173/9_ringTone4_P_RTP.bin
 
-# WiFi - hardware
-vendor/bin/hw/android.hardware.wifi-service-lazy:vendor/bin/hw/android.hardware.wifi-service-lazy-mediatek
-vendor/etc/init/android.hardware.wifi-service-lazy.rc:vendor/etc/init/android.hardware.wifi-service-lazy-mediatek.rc
-vendor/etc/vintf/manifest/android.hardware.wifi-service.xml:vendor/etc/vintf/manifest/android.hardware.wifi-service-mediatek.xml
-
 # WiFi
 vendor/bin/netdagent
 vendor/bin/wlan_assistant
