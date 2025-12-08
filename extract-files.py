@@ -144,7 +144,7 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('odm', 'vendor'),
     'vendor/lib64/libmicamera_hal_core.so': blob_fixup()
         .add_needed('libprocessgroup_shim.so')
-        .replace_needed('libui.so', 'libui-v34.so'),
+        .add_needed('libui-v34.so'),
     (
         'vendor/lib64/mt6899/libmtkcam_grallocutils.so',
         'vendor/lib64/libmtkcam_grallocutils_aidlv2helper.so',
