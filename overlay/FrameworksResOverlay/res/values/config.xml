@@ -339,8 +339,8 @@
     <!-- Slow brightness animation ramp rate in brightness units per second-->
     <integer name="config_brightness_ramp_rate_slow" translatable="false">256</integer>
     
-    <integer name="config_screenBrightnessRampIncreaseMaxMillis">4000</integer>
-    <integer name="config_screenBrightnessRampDecreaseMaxMillis">4000</integer>
+    <integer name="config_screenBrightnessRampIncreaseMaxMillis">1500</integer>
+    <integer name="config_screenBrightnessRampDecreaseMaxMillis">1500</integer>
 
     <!-- Maximum screen brightness allowed by the power manager.
          -2 is invalid so setting will resort to int value specified above.
