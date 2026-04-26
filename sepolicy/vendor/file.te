@@ -27,10 +27,6 @@ type vendor_fingerprint_sysfs, sysfs_type, fs_type;
 # Power
 type vendor_touchfeature_device, dev_type;
 
-# Trusted Execution Environment (TEE)
-type mitee_data_file, data_file_type, file_type;
-type proc_mitee_log, fs_type, proc_type;
-
 # Touch
 type sysfs_touch_hostprocess, fs_type, sysfs_type;
 type hal_touchfeature_xiaomi_default, domain;
