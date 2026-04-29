@@ -43,7 +43,6 @@
         <activity
             android:name=".gamebar.GameBarSettingsActivity"
             android:label="@string/game_bar_title"
-            android:theme="@style/Theme.SubSettingsBase"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
