@@ -58,7 +58,6 @@
 
         <!-- GameBar AppSelector -->
         <activity android:name=".gamebar.GameBarAppSelectorActivity" />
-        <activity android:name=".gamebar.GameBarAppRemoverActivity" />
 
         <!-- Touch Sampling App Selector/Remover -->
         <activity android:name=".touchsampling.TouchSamplingAppSelectorActivity" />
