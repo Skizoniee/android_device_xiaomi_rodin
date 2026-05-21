@@ -29,6 +29,9 @@ import com.xiaomi.settings.R
 class TouchSamplingSettingsFragment : PreferenceFragment(), Preference.OnPreferenceChangeListener {
 
     private var mHTSRPreference: SwitchPreference? = null
+    private var mAutoEnablePreference: SwitchPreference? = null
+    private var mChooseAppsPreference: Preference? = null
+    private var mRemoveAppsPreference: Preference? = null
     private var mPrefs: SharedPreferences? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
@@ -36,6 +39,9 @@ class TouchSamplingSettingsFragment : PreferenceFragment(), Preference.OnPrefere
         activity.actionBar?.setDisplayHomeAsUpEnabled(true)
 
         mHTSRPreference = findPreference(HTSR_ENABLE_KEY) as SwitchPreference?
+        mAutoEnablePreference = findPreference(HTSR_AUTO_ENABLE_KEY) as SwitchPreference?
+        mChooseAppsPreference = findPreference(HTSR_APP_SELECTOR_KEY)
+        mRemoveAppsPreference = findPreference(HTSR_APP_REMOVER_KEY)
         mPrefs = activity.getSharedPreferences(SHAREDHTSR, Context.MODE_PRIVATE)
 
         // Set the initial state of the switch
@@ -48,6 +54,18 @@ class TouchSamplingSettingsFragment : PreferenceFragment(), Preference.OnPrefere
         // Start the service if the toggle is enabled
         if (htsrEnabled) {
             startTouchSamplingService(true)
+        }
+
+        mChooseAppsPreference?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            val intent = Intent(activity, TouchSamplingAppSelectorActivity::class.java)
+            startActivity(intent)
+            true
+        }
+
+        mRemoveAppsPreference?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            val intent = Intent(activity, TouchSamplingAppRemoverActivity::class.java)
+            startActivity(intent)
+            true
         }
     }
 
@@ -85,5 +103,9 @@ class TouchSamplingSettingsFragment : PreferenceFragment(), Preference.OnPrefere
         private const val HTSR_ENABLE_KEY = "htsr_enable"
         const val SHAREDHTSR = "SHAREDHTSR"
         const val HTSR_STATE = "htsr_state"
+        const val HTSR_AUTO_ENABLE_KEY = "htsr_auto_enable"
+        const val HTSR_APP_SELECTOR_KEY = "htsr_app_selector"
+        const val HTSR_APP_REMOVER_KEY = "htsr_app_remover"
+        const val HTSR_APPS_PREF = "htsr_auto_apps"
     }
 }
