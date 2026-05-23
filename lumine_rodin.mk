@@ -8,19 +8,17 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Infinity stuff.
-$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
+# Inherit some common Lumine stuff.
+$(call inherit-product, vendor/lumine/config/common_full_phone.mk)
 
 # Inherit from rodin device
 $(call inherit-product, device/xiaomi/rodin/device.mk)
 
 # Flags
-INFINITY_MAINTAINER := "Zeyy"
-TARGET_HAS_UDFPS := true
-WITH_GAPPS := true
+LUMINE_MAINTAINER := XZ
 
 PRODUCT_DEVICE := rodin
-PRODUCT_NAME := infinity_rodin
+PRODUCT_NAME := lumine_rodin
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := 2412DPC0AG
 PRODUCT_MANUFACTURER := xiaomi

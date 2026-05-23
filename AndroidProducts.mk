@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/infinity_rodin.mk
+    $(LOCAL_DIR)/lumine_rodin.mk
