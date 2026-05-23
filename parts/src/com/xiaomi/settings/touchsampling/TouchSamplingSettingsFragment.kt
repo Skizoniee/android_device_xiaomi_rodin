@@ -31,7 +31,6 @@ class TouchSamplingSettingsFragment : PreferenceFragment(), Preference.OnPrefere
     private var mHTSRPreference: SwitchPreference? = null
     private var mAutoEnablePreference: SwitchPreference? = null
     private var mChooseAppsPreference: Preference? = null
-    private var mRemoveAppsPreference: Preference? = null
     private var mPrefs: SharedPreferences? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
@@ -41,7 +40,6 @@ class TouchSamplingSettingsFragment : PreferenceFragment(), Preference.OnPrefere
         mHTSRPreference = findPreference(HTSR_ENABLE_KEY) as SwitchPreference?
         mAutoEnablePreference = findPreference(HTSR_AUTO_ENABLE_KEY) as SwitchPreference?
         mChooseAppsPreference = findPreference(HTSR_APP_SELECTOR_KEY)
-        mRemoveAppsPreference = findPreference(HTSR_APP_REMOVER_KEY)
         mPrefs = activity.getSharedPreferences(SHAREDHTSR, Context.MODE_PRIVATE)
 
         // Set the initial state of the switch
@@ -62,11 +60,7 @@ class TouchSamplingSettingsFragment : PreferenceFragment(), Preference.OnPrefere
             true
         }
 
-        mRemoveAppsPreference?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
-            val intent = Intent(activity, TouchSamplingAppRemoverActivity::class.java)
-            startActivity(intent)
-            true
-        }
+
     }
 
     override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
@@ -105,7 +99,6 @@ class TouchSamplingSettingsFragment : PreferenceFragment(), Preference.OnPrefere
         const val HTSR_STATE = "htsr_state"
         const val HTSR_AUTO_ENABLE_KEY = "htsr_auto_enable"
         const val HTSR_APP_SELECTOR_KEY = "htsr_app_selector"
-        const val HTSR_APP_REMOVER_KEY = "htsr_app_remover"
         const val HTSR_APPS_PREF = "htsr_auto_apps"
     }
 }

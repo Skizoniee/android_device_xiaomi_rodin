@@ -3,72 +3,65 @@ package com.xiaomi.settings.touchsampling
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.preference.PreferenceScreen
+import androidx.preference.SwitchPreferenceCompat
+import com.android.settingslib.widget.SettingsBasePreferenceFragment
 import com.xiaomi.settings.R
 import java.util.HashSet
 
-class TouchSamplingAppSelectorFragment : Fragment() {
+class TouchSamplingAppSelectorFragment : SettingsBasePreferenceFragment() {
 
-    private lateinit var recyclerView: RecyclerView
-    private var adapter: com.xiaomi.settings.gamebar.GameBarAppsAdapter? = null
-    private lateinit var packageManager: PackageManager
-    private var allApps: MutableList<ApplicationInfo>? = null
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.game_bar_app_selector, container, false)
+    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+        val screen = preferenceManager.createPreferenceScreen(requireContext())
+        preferenceScreen = screen
+        loadApps(screen)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        recyclerView = view.findViewById(R.id.app_list)
-        packageManager = requireContext().packageManager
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        loadApps()
-    }
-
-    private fun loadApps() {
-        allApps = ArrayList()
+    private fun loadApps(screen: PreferenceScreen) {
+        val packageManager = requireContext().packageManager
         val installedApps = packageManager.getInstalledApplications(PackageManager.GET_META_DATA)
         val autoApps = savedAutoApps
-        for (appInfo in installedApps) {
-            if (appInfo.flags and ApplicationInfo.FLAG_SYSTEM == 0 &&
-                appInfo.packageName != requireContext().packageName &&
-                !autoApps.contains(appInfo.packageName)
-            ) {
-                allApps!!.add(appInfo)
+
+        val sortedApps = installedApps.filter { appInfo ->
+            appInfo.flags and ApplicationInfo.FLAG_SYSTEM == 0 &&
+            appInfo.packageName != requireContext().packageName
+        }.sortedWith(
+            compareByDescending<ApplicationInfo> { autoApps.contains(it.packageName) }
+            .thenBy { it.loadLabel(packageManager).toString().lowercase() }
+        )
+
+        for (appInfo in sortedApps) {
+            val pref = SwitchPreferenceCompat(requireContext()).apply {
+                title = appInfo.loadLabel(packageManager)
+                summary = appInfo.packageName
+                icon = appInfo.loadIcon(packageManager)
+                isChecked = autoApps.contains(appInfo.packageName)
+                isPersistent = false
+                setOnPreferenceChangeListener { _, newValue ->
+                    val isEnabled = newValue as Boolean
+                    updateAutoApp(appInfo.packageName, isEnabled)
+                    true
+                }
             }
+            screen.addPreference(pref)
         }
-        val listener = object : com.xiaomi.settings.gamebar.GameBarAppsAdapter.OnAppClickListener {
-            override fun onAppClick(appInfo: ApplicationInfo) {
-                addAppToAutoList(appInfo.packageName)
-                val label = appInfo.loadLabel(packageManager).toString()
-                Toast.makeText(context, getString(R.string.htsr_app_added, label), Toast.LENGTH_SHORT).show()
-                allApps!!.remove(appInfo)
-                adapter!!.notifyDataSetChanged()
-            }
-        }
-        adapter = com.xiaomi.settings.gamebar.GameBarAppsAdapter(packageManager, allApps!!, listener)
-        recyclerView.adapter = adapter
     }
 
     private val savedAutoApps: Set<String>
         get() = PreferenceManager.getDefaultSharedPreferences(requireContext())
-            .getStringSet(TouchSamplingSettingsFragment.HTSR_APPS_PREF, HashSet())!!
+            .getStringSet(TouchSamplingSettingsFragment.HTSR_APPS_PREF, HashSet()) ?: HashSet()
 
-    private fun addAppToAutoList(packageName: String) {
-        val autoApps = HashSet(savedAutoApps)
-        autoApps.add(packageName)
-        PreferenceManager.getDefaultSharedPreferences(requireContext())
-            .edit().putStringSet(TouchSamplingSettingsFragment.HTSR_APPS_PREF, autoApps).apply()
+    private fun updateAutoApp(packageName: String, add: Boolean) {
+        val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        val currentSet = prefs.getStringSet(TouchSamplingSettingsFragment.HTSR_APPS_PREF, HashSet()) ?: HashSet()
+
+        val newSet = HashSet(currentSet)
+        if (add) {
+            newSet.add(packageName)
+        } else {
+            newSet.remove(packageName)
+        }
+        prefs.edit().putStringSet(TouchSamplingSettingsFragment.HTSR_APPS_PREF, newSet).apply()
     }
 }

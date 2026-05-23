@@ -59,9 +59,8 @@
         <!-- GameBar AppSelector -->
         <activity android:name=".gamebar.GameBarAppSelectorActivity" />
 
-        <!-- Touch Sampling App Selector/Remover -->
+        <!-- Touch Sampling App Selector -->
         <activity android:name=".touchsampling.TouchSamplingAppSelectorActivity" />
-        <activity android:name=".touchsampling.TouchSamplingAppRemoverActivity" />
 
         <!-- GameBar Overlay Tile Service -->
         <service

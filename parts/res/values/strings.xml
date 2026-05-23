@@ -38,10 +38,7 @@
     <string name="htsr_auto_enable_summary">Automatically enable touch boost for selected foreground apps</string>
     <string name="htsr_choose_apps_title">Choose boosted apps</string>
     <string name="htsr_choose_apps_summary">Select apps that should use high touch polling rate</string>
-    <string name="htsr_remove_apps_title">Remove selected apps</string>
-    <string name="htsr_remove_apps_summary">Remove apps from the boosted apps list</string>
     <string name="htsr_app_added">%1$s added.</string>
-    <string name="htsr_app_removed">%1$s removed.</string>
 
     <!-- GameBar Overlay -->
     <string name="game_bar_title">GameBar</string>

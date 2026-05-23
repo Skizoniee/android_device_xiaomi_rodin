@@ -34,11 +34,5 @@
                android:summary="@string/htsr_choose_apps_summary"
                android:dependency="htsr_auto_enable" />
 
-          <Preference
-               android:key="htsr_app_remover"
-               android:title="@string/htsr_remove_apps_title"
-               android:summary="@string/htsr_remove_apps_summary"
-               android:dependency="htsr_auto_enable" />
-
      </PreferenceCategory>
 </PreferenceScreen>
