@@ -169,6 +169,7 @@ blob_fixups: blob_fixups_user_type = {
      'odm/lib64/libwa_widelens_undistort.so',
      'odm/lib64/libarcsoft_beautyshot.so',
      'vendor/lib64/libMiPhotoFilter.so',
+     'vendor/lib64/libmcve.so',
      'odm/lib64/libMiEmojiEffect.so',
      'vendor/lib64/mt6899/libneuron_adapter_mgvi.so',
      'odm/lib64/libMiVideoFilter.so'): blob_fixup()
@@ -238,6 +239,11 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libaudio_aidl_conversion_common_ndk.so', 'libaudio_aidl_conversion_common_ndk_prebuilt.so'),
     'vendor/lib64/soundfx/libdlbvolaidl.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V5-ndk.so', 'android.media.audio.common.types-V3-ndk.so'),
+    (
+        'vendor/lib64/com.xiaomi.immunesystem.client.so',
+        'vendor/lib64/com.xiaomi.immunesystem.core.so',
+    ): blob_fixup()
+        .replace_needed('libprotobuf-cpp-full-21.12.so', 'libprotobuf-cpp-full-21.7.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

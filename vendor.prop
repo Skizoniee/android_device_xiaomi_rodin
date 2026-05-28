@@ -72,10 +72,6 @@ vendor.connsys.driver.ready=no
 
 # Camera
 camera.disable_zsl_mode=1
-ro.vendor.camera.directfdyuv.support=1
-ro.vendor.camera3.zsl.project=400
-ro.vendor.camera.insensorzoom.support=0
-ro.vendor.camera.isp.support.colorspace=0
 persist.vendor.camera3.pipeline.bufnum.min.high_ram.imgo=6
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.imgo=5
 persist.vendor.camera3.pipeline.bufnum.base.imgo=3
@@ -91,15 +87,18 @@ persist.vendor.camera3.pipeline.bufnum.base.rsso=4
 persist.vendor.camera3.pipeline.bufnum.min.high_ram.fdyuv=5
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.fdyuv=5
 persist.vendor.vt.camera.rotate=1
-ro.vendor.dynamiccamera.ability_level=2
+persist.vendor.vcb.enable=false
+ro.camerax.extensions.enabled=true
 ro.vendor.afbc.enable=3
+ro.vendor.camera3.zsl.default=260
+ro.vendor.camera.directfdyuv.support=1
+ro.vendor.dynamiccamera.ability_level=2
 ro.vendor.hdr10plus.enable=1
 ro.vendor.mtk_camera_app_version=3
 ro.vendor.mtk_video_hevc_enc_support=1
 vendor.camera.mdp.cz.enable=1
 vendor.camera.mdp.dre.enable=1
 vendor.mtk.camera.app.fd.video=1
-ro.vendor.camera3.zsl.default=260
 
 # Charger
 persist.vendor.accelerate.charge=true

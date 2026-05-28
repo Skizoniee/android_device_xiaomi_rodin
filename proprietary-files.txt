@@ -415,12 +415,20 @@ odm/lib64/libportrait_repair_apu.so
 odm/lib64/librfs_warp.so
 odm/lib64/libwa_widelens_undistort.so
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/port_select.db;MAKE_COPY_RULE_ONLY
+vendor/etc/default_pd_calibration.bin
 vendor/etc/vintf/manifest/manifest_aovservice.xml
 vendor/etc/vintf/manifest/manifest_cameraprovider.xml
 vendor/etc/vintf/manifest/manifest_isphal.xml
 vendor/etc/vintf/manifest/manifest_uievent.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.aidlbgservice-service.xml
 vendor/lib64/com.xiaomi.camdfx.so
+vendor/lib64/com.xiaomi.immunesystem.bigdata.so
+vendor/lib64/com.xiaomi.immunesystem.bigdata2.so
+vendor/lib64/com.xiaomi.immunesystem.client.so
+vendor/lib64/com.xiaomi.immunesystem.core.so
+vendor/lib64/com.xiaomi.immunesystem.hook.mivi.so
+vendor/lib64/com.xiaomi.immunesystem.hook.mtkhal.so
+vendor/lib64/com.xiaomi.messagecenter.so
 vendor/lib64/hw/mt6899/android.hardware.camera.provider@2.6-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
 vendor/lib64/hw/mt6899/vendor.mediatek.hardware.camera.atms@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
 vendor/lib64/hw/mt6899/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
@@ -429,6 +437,7 @@ vendor/lib64/hw/vendor.mediatek.hardware.camera.atms_aidl@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice_aidl@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal_aidl@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.uieventservice_aidl@1.0-impl.so
+vendor/lib64/immunesystem.db.sqlite3.so
 vendor/lib64/lib3a.ae.pipe.so
 vendor/lib64/lib3a.custom.shading.flow.so
 vendor/lib64/libAF.so
@@ -479,6 +488,7 @@ vendor/lib64/libimgstream_sync.so
 vendor/lib64/libimgsys_osal.so
 vendor/lib64/libjpeg-alpha-oal_vendor.so
 vendor/lib64/libjpeg-alpha_vendor.so
+vendor/lib64/libmcve.so
 vendor/lib64/libmiSATTranslate.so
 vendor/lib64/libmialgo.so
 vendor/lib64/libmialgo_ai_vision.so
@@ -513,6 +523,7 @@ vendor/lib64/libmtkcam_pwrutils.android.so
 vendor/lib64/libofflinedebugdata.so
 vendor/lib64/libremosaic_wrapper.so
 vendor/lib64/libremosaiclib.so
+vendor/lib64/libshadowhook.so
 vendor/lib64/libultrahdr_mtk.so
 vendor/lib64/libvividhdr.so
 vendor/lib64/mt6899/lib3a.ae.so;SYMLINK=vendor/lib64/lib3a.ae.so
@@ -568,6 +579,9 @@ vendor/lib64/mt6899/libaiselector.so;SYMLINK=vendor/lib64/libaiselector.so
 vendor/lib64/mt6899/libalgo.aosp.log.so;SYMLINK=vendor/lib64/libalgo.aosp.log.so
 vendor/lib64/mt6899/libapiwrapper.so;SYMLINK=vendor/lib64/libapiwrapper.so
 vendor/lib64/mt6899/libapudcutils.so;SYMLINK=vendor/lib64/libapudcutils.so
+vendor/lib64/mt6899/libarm_egl_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_egl_properties_sysprop.so
+vendor/lib64/mt6899/libarm_gralloc_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_gralloc_properties_sysprop.so
+vendor/lib64/mt6899/libarm_mali_config_sysprops.so;SYMLINK=vendor/lib64/libarm_mali_config_sysprops.so
 vendor/lib64/mt6899/libcam.3a_isp.utils.so;SYMLINK=vendor/lib64/libcam.3a_isp.utils.so
 vendor/lib64/mt6899/libcam.afmgr.so;SYMLINK=vendor/lib64/libcam.afmgr.so
 vendor/lib64/mt6899/libcam.chdr.so;SYMLINK=vendor/lib64/libcam.chdr.so
@@ -730,6 +744,7 @@ vendor/lib64/mt6899/liblpnr.so;SYMLINK=vendor/lib64/liblpnr.so
 vendor/lib64/mt6899/libmdla_ut.so;SYMLINK=vendor/lib64/libmdla_ut.so
 vendor/lib64/mt6899/libmfllcore.so;SYMLINK=vendor/lib64/libmfllcore.so
 vendor/lib64/mt6899/libmgr3a.adapt.so;SYMLINK=vendor/lib64/libmgr3a.adapt.so
+vendor/lib64/mt6899/libmtk_mali_utils.so;SYMLINK=vendor/lib64/libmtk_mali_utils.so
 vendor/lib64/mt6899/libmtkcam.atmseventmgr.so;SYMLINK=vendor/lib64/libmtkcam.atmseventmgr.so
 vendor/lib64/mt6899/libmtkcam.debugwrapper.so;SYMLINK=vendor/lib64/libmtkcam.debugwrapper.so
 vendor/lib64/mt6899/libmtkcam.eventcallback.so;SYMLINK=vendor/lib64/libmtkcam.eventcallback.so
@@ -916,6 +931,7 @@ vendor/lib64/vendor.xiaomi.hardware.camera.injection-client.so
 vendor/lib64/vendor.xiaomi.hardware.camera.injection-service.so
 vendor/lib64/vendor.xiaomi.hardware.camera.synthetic-V1-ndk.so
 vendor/lib64/vendor.xiaomi.hardware.camera.synthetic-impl.so
+vendor/lib64/xiaomi.system.hypsys.common-V1-ndk.so
 
 # Camera-arcsoft
 odm/lib64/libarc.ion.so
@@ -1110,6 +1126,10 @@ vendor/etc/camera/mimotion_f5b.bin
 vendor/etc/camera/mimotion_f5w.bin
 vendor/etc/camera/mt6899/gma_custom.xml:vendor/etc/camera/mt6899/gma_custom.txt;SYMLINK=vendor/etc/camera/mt6899/gma_custom.xml
 
+# Camera - CameraX extensions
+vendor/etc/permissions/camera_extensions.xml
+vendor/framework/androidx.camera.extensions.impl.jar
+
 # Chipinfo
 vendor/bin/chipinfo
 vendor/etc/init/chipinfo_init.rc
@@ -1236,6 +1256,8 @@ vendor/lib64/mt6899/libhdrvideo.so;SYMLINK=vendor/lib64/libhdrvideo.so
 # Dolby
 vendor/bin/hw/vendor.dolby.dms.service
 vendor/bin/hw/vendor.dolby.media.c2-default-service-dax
+vendor/etc/dolby/dax-default-spatializer.xml
+vendor/etc/dolby/dax-default.xml
 vendor/etc/dolby/dax-fs19xx-spatializer.xml
 vendor/etc/dolby/dax-fs19xx.xml
 vendor/etc/init/dms-service.rc
@@ -1406,22 +1428,36 @@ vendor/etc/vintf/manifest/android.hardware.gatekeeper-service.mitee.xml
 
 # GNSS
 vendor/bin/hw/android.hardware.gnss-service.mediatek
+vendor/bin/hw/vendor.mediatek.hardware.gnss-service
 vendor/bin/mnld
 vendor/bin/mtk_agpsd
+vendor/bin/mtk_lbs_service
 vendor/etc/init/android.hardware.gnss-service.mediatek.rc
 vendor/etc/init/init.gps_pwr.rc
 vendor/etc/init/init.gps_scp.rc
 vendor/etc/init/mtk_agpsd_p.rc
+vendor/etc/init/mtk_gnss.rc
+vendor/etc/init/mtk_lbs_service.rc
 vendor/etc/vintf/manifest/gnss-default.xml:vendor/etc/vintf/manifest/gnss-mtk-default.xml
 vendor/etc/vintf/manifest/gnss-mtk.xml
+vendor/etc/vintf/manifest/mtk_lbs_service.xml
+vendor/etc/vintf/manifest/mtkgnss-batching.xml
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
 vendor/lib64/hw/gps.default.so
+vendor/lib64/hw/mtkflp.default.so
 vendor/lib64/hw/mtkgeofence.default.so
 vendor/lib64/hw/vendor.mediatek.hardware.gnss-impl.so
+vendor/lib64/hw/vendor.mediatek.hardware.gnss.batching-impl.so
+vendor/lib64/libapmonitor_vendor.so
 vendor/lib64/mt6899/libDR.so;SYMLINK=vendor/lib64/libDR.so
 vendor/lib64/mt6899/libmnl.so;SYMLINK=vendor/lib64/libmnl.so
+vendor/lib64/mtk_lbs_service-impl.so
+vendor/lib64/vendor.mediatek.hardware.apmonitor-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib64/vendor.mediatek.hardware.gnss-V2-ndk.so
+vendor/lib64/vendor.mediatek.hardware.gnss.batching-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.lbs-V1-ndk.so
+vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
 
 # GNSS (Configs)
 vendor/etc/MNL_Config.xml
@@ -1505,7 +1541,9 @@ system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
 # IMS
 vendor/bin/hw/vtservice_aidl
+vendor/bin/volte_clientapi_ua
 vendor/etc/init/init.vtservice_aidl.rc
+vendor/etc/init/volte_clientapi_ua.rc
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony-impl.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
 
@@ -1539,6 +1577,7 @@ vendor/lib64/libvcodec_oal.so
 vendor/lib64/libvcodecdrv_header_stub.so
 
 # Media (Codec2)
+vendor/etc/TL_settings.json
 vendor/etc/VideoLog_dynamic.ds
 vendor/lib64/libcodec2_fsr.so
 vendor/lib64/libcodec2_mtk_c2store.so
@@ -1551,6 +1590,7 @@ vendor/lib64/libcodec2_vpp_mi_plugin.so
 vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
 vendor/lib64/libformatter.so
+vendor/lib64/libswtcc.so
 
 # Mlipay
 odm/bin/mlipayd_mitee
@@ -1641,6 +1681,93 @@ vendor/data/model/object_detection.dla
 vendor/data/model/x2_SR_dynamic.dla
 vendor/data/model/x3_SR_dynamic.dla
 vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc
+vendor/etc/nhw
+vendor/etc/nn/cam_aimemc/camera_memc_30to60.dla
+vendor/etc/nn/cam_aimemc/camera_memc_resizer_1080p_afbc_nv12.dla
+vendor/etc/nn/cam_aimemc/camera_memc_resizer_1080p_yuv420_nv21.dla
+vendor/etc/nn/cam_aimemc/camera_memc_resizer_2160p_afbc_nv12.dla
+vendor/etc/nn/cam_aimemc/camera_memc_resizer_2160p_yuv420_nv21.dla
+vendor/etc/nn/cam_aimemc/confidence_fallback_levels.json
+vendor/etc/nn/cam_aimemc/settings_4K.json
+vendor/etc/nn/cam_aimemc/settings_FHD.json
+vendor/etc/nn/ot/neuron_detection.mdla5_3
+vendor/etc/nn/ot/neuron_detection.mdla5_5.cache
+vendor/etc/nn/ot/neuron_tracking.mdla5_3
+vendor/etc/nn/ot/neuron_tracking.mdla5_5.cache
+vendor/etc/nn/video_aimemc/confidence_fallback_levels.json
+vendor/etc/nn/video_aimemc/resolution_settings.json
+vendor/etc/nn/video_aimemc/settings.json
+vendor/etc/nn/video_aimemc/video_memc_24to60.dla
+vendor/etc/nn/video_aimemc/video_memc_30to60.dla
+vendor/etc/nn/video_aimemc/video_memc_resizer_dynamic_out720Y_10b.dla
+vendor/etc/nn/video_aimemc/video_memc_resizer_dynamic_out720Y_10b_CBFC.dla
+vendor/etc/nn/video_aimemc/video_memc_resizer_dynamic_out720Y_8b.dla
+vendor/etc/nn/video_aimemc/video_memc_resizer_dynamic_out720Y_8b_CBFC.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q1_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q1_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q1_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q1_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q2_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q2_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q2_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q2_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q3_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q3_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q3_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q3_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q4_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q4_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q4_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q4_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q5_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q5_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q5_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q5_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q6_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q6_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q6_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q6_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q7_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q7_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q7_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q7_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q8_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q8_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q8_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/1.5x/mtk_AISR_D1_Q8_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q1_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q1_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q1_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q1_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q2_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q2_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q2_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q2_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q3_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q3_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q3_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q3_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q4_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q4_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q4_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q4_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q5_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q5_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q5_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q5_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q6_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q6_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q6_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q6_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q7_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q7_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q7_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q7_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q8_dynamic_1k_10b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q8_dynamic_1k_8b.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q8_dynamic_1k_8b_l.dla
+vendor/etc/nn/video_aisr/2.0x/mtk_AISR_D1_Q8_dynamic_1k_8b_p.dla
+vendor/etc/nn/video_aisr/resolution_settings.json
 vendor/etc/nnapi_powerhal.json
 vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml
 vendor/lib64/libaimemc.so
@@ -1755,8 +1882,10 @@ vendor/etc/init/muxreport.rc
 vendor/etc/init/volte_clientapi_ua.rc
 vendor/lib64/libcarrierconfig.so
 vendor/lib64/libccci_util.so
+vendor/lib64/libforkexecwrap.so
 vendor/lib64/libgwsdv2-ril.so
 vendor/lib64/libgwsdv3-ril.so
+vendor/lib64/libifcutils_mtk.so
 vendor/lib64/libipsec_ims_shr.so
 vendor/lib64/libmipc.so
 vendor/lib64/libmmprofile.so
