@@ -415,13 +415,11 @@ odm/lib64/libportrait_repair_apu.so
 odm/lib64/librfs_warp.so
 odm/lib64/libwa_widelens_undistort.so
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/port_select.db;MAKE_COPY_RULE_ONLY
-vendor/bin/hw/vendor.xiaomi.hardware.dynamiccameraserver
 vendor/etc/vintf/manifest/manifest_aovservice.xml
 vendor/etc/vintf/manifest/manifest_cameraprovider.xml
 vendor/etc/vintf/manifest/manifest_isphal.xml
 vendor/etc/vintf/manifest/manifest_uievent.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.aidlbgservice-service.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.dynamiccameraserver.xml
 vendor/lib64/com.xiaomi.camdfx.so
 vendor/lib64/hw/mt6899/android.hardware.camera.provider@2.6-impl-mediatek.so;SYMLINK=vendor/lib64/hw/android.hardware.camera.provider@2.6-impl-mediatek.so
 vendor/lib64/hw/mt6899/vendor.mediatek.hardware.camera.atms@1.0-impl.so;SYMLINK=vendor/lib64/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
