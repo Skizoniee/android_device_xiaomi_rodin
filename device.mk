@@ -282,8 +282,6 @@ PRODUCT_COPY_FILES += \
 # MiuiCamera
 ifeq ($(TARGET_SHIPS_MIUICAMERA), true)
     $(call inherit-product, device/xiaomi/rodin-miuicamera/device.mk)
-    PRODUCT_VENDOR_PROPERTIES += \
-        vendor.camera.aux.packagelist=com.android.camera
 else
     PRODUCT_VENDOR_PROPERTIES += \
         vendor.camera.aux.packagelist=org.lineageos.aperture
