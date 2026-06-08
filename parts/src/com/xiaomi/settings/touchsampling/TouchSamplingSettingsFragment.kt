@@ -22,32 +22,32 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.preference.Preference
-import androidx.preference.PreferenceFragment
-import androidx.preference.SwitchPreference
+import com.android.settingslib.widget.SettingsBasePreferenceFragment
+import androidx.preference.SwitchPreferenceCompat
 import com.xiaomi.settings.R
 
-class TouchSamplingSettingsFragment : PreferenceFragment(), Preference.OnPreferenceChangeListener {
+class TouchSamplingSettingsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceChangeListener {
 
-    private var mHTSRPreference: SwitchPreference? = null
-    private var mAutoEnablePreference: SwitchPreference? = null
+    private var mHTSRPreference: SwitchPreferenceCompat? = null
+    private var mAutoEnablePreference: SwitchPreferenceCompat? = null
     private var mChooseAppsPreference: Preference? = null
     private var mPrefs: SharedPreferences? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        addPreferencesFromResource(R.xml.htsr_settings)
-        activity.actionBar?.setDisplayHomeAsUpEnabled(true)
+        setPreferencesFromResource(R.xml.htsr_settings, rootKey)
+        activity?.actionBar?.setDisplayHomeAsUpEnabled(true)
 
-        mHTSRPreference = findPreference(HTSR_ENABLE_KEY) as SwitchPreference?
-        mAutoEnablePreference = findPreference(HTSR_AUTO_ENABLE_KEY) as SwitchPreference?
+        mHTSRPreference = findPreference<SwitchPreferenceCompat>(HTSR_ENABLE_KEY)
+        mAutoEnablePreference = findPreference<SwitchPreferenceCompat>(HTSR_AUTO_ENABLE_KEY)
         mChooseAppsPreference = findPreference(HTSR_APP_SELECTOR_KEY)
-        mPrefs = activity.getSharedPreferences(SHAREDHTSR, Context.MODE_PRIVATE)
+        mPrefs = activity?.getSharedPreferences(SHAREDHTSR, Context.MODE_PRIVATE)
 
         // Set the initial state of the switch
         val htsrEnabled = mPrefs!!.getBoolean(HTSR_STATE, false)
         mHTSRPreference?.isChecked = htsrEnabled
 
         // Enable the switch and set its listener
-        mHTSRPreference?.onPreferenceChangeListener = this
+        mHTSRPreference?.setOnPreferenceChangeListener(this)
 
         // Start the service if the toggle is enabled
         if (htsrEnabled) {
@@ -79,15 +79,15 @@ class TouchSamplingSettingsFragment : PreferenceFragment(), Preference.OnPrefere
     private fun startTouchSamplingService(enable: Boolean) {
         val serviceIntent = Intent(activity, TouchSamplingService::class.java)
         if (enable) {
-            activity.startService(serviceIntent)
+            activity?.startService(serviceIntent)
         } else {
-            activity.stopService(serviceIntent)
+            activity?.stopService(serviceIntent)
         }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
-            activity.onBackPressed()
+            activity?.onBackPressed()
             return true
         }
         return false
