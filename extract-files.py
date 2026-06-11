@@ -157,8 +157,7 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/mt6899/libmtkcam_taskmgr.so',
      'vendor/lib64/hw/hwcomposer.mtk_common.so'): blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
-    ('vendor/lib64/libmialgoengine.so',
-     'vendor/lib64/libcom.xiaomi.grallocutils.so'): blob_fixup()
+    'vendor/lib64/libcom.xiaomi.grallocutils.so': blob_fixup()
         .add_needed('libprocessgroup_shim.so')
         .call(blob_fixup_graphic_buffer_size),
     'vendor/lib64/libmicamera_hal_core.so': blob_fixup()
@@ -168,7 +167,6 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/lib64/mt6899/libneuralnetworks_sl_driver_mtk_prebuilt.so',
      'odm/lib64/libwa_widelens_undistort.so',
      'odm/lib64/libarcsoft_beautyshot.so',
-     'vendor/lib64/libMiPhotoFilter.so',
      'vendor/lib64/libmcve.so',
      'odm/lib64/libMiEmojiEffect.so',
      'vendor/lib64/mt6899/libneuron_adapter_mgvi.so',
@@ -244,6 +242,28 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/com.xiaomi.immunesystem.core.so',
     ): blob_fixup()
         .replace_needed('libprotobuf-cpp-full-21.12.so', 'libprotobuf-cpp-full-21.7.so'),
+    (
+        'vendor/bin/hw/mt6899/camerahalserver',
+        'odm/lib64/libmorpho_Depurple.so',
+        'odm/lib64/camera/plugins/capture/com.xiaomi.plugin.depurple.so',
+        'odm/lib64/camera/plugins/capture/com.xiaomi.plugin.filter.so',
+    ): blob_fixup()
+        .add_needed('libbinder_shim.so'),
+    'vendor/lib64/libmialgoengine.so': blob_fixup()
+        .add_needed('libbinder_shim.so')
+        .add_needed('libprocessgroup_shim.so')
+        .call(blob_fixup_graphic_buffer_size),
+    'vendor/lib64/libMiPhotoFilter.so': blob_fixup()
+        .clear_symbol_version('AHardwareBuffer_allocate')
+        .clear_symbol_version('AHardwareBuffer_createFromHandle')
+        .clear_symbol_version('AHardwareBuffer_describe')
+        .clear_symbol_version('AHardwareBuffer_getNativeHandle')
+        .clear_symbol_version('AHardwareBuffer_isSupported')
+        .clear_symbol_version('AHardwareBuffer_lock')
+        .clear_symbol_version('AHardwareBuffer_lockPlanes')
+        .clear_symbol_version('AHardwareBuffer_release')
+        .clear_symbol_version('AHardwareBuffer_unlock')
+        .add_needed('libbinder_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
