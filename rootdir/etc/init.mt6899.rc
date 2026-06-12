@@ -236,7 +236,7 @@ on post-fs-data
     #XIAOMI: Create camera directory for mivifwk file --start
     mkdir /data/vendor/camera
     chown root system /data/vendor/camera
-    chmod 0771 /data/vendor/camera
+    chmod 0777 /data/vendor/camera
 
     mkdir /data/vendor/camera/offlinelog 0777 cameraserver audio
     # for skynet
@@ -249,7 +249,7 @@ on post-fs-data
     chmod 755 mnt/vendor/persist/camera
     mkdir /data/vendor/camera
     chown root system /data/vendor/camera
-    chmod 0771 /data/vendor/camera
+    chmod 0777 /data/vendor/camera
     #XIAOMI: Create camera directory for calibration file --end
 
     #XIAOMI: add for ois --start
