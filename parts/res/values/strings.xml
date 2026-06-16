@@ -62,4 +62,9 @@
     <string name="core_6">Core 6 (Big)</string>
     <string name="core_7">Core 7 (Prime)</string>
 
+    <!-- Special Features Menu -->
+    <string name="special_features_title">Special features</string>
+
+    <!-- Summary shown under Special features in the Display list -->
+    <string name="special_features_summary">High Touch Polling Rate, GameBar, Core Control, etc.</string>
 </resources>
