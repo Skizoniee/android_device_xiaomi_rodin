@@ -216,6 +216,9 @@ debug.hwui.target_cpu_time_percent=30
 debug.hwui.use_hint_manager=true
 
 # IMS
+persist.vendor.ims_support=1
+persist.vendor.vilte_support=1
+persist.vendor.volte_support=1
 persist.vendor.mtk.volte.enable=1
 persist.vendor.mtk_ct_volte_support=3
 persist.vendor.mtk_dynamic_ims_switch=1
@@ -279,7 +282,6 @@ ro.vendor.pq.mtk_mml_color_adaptive_support=0
 ro.vendor.pq.mtk_sdr_panel_dtmo_support=0
 ro.vendor.pq.mtk_smart_bluelight_def_support=1
 ro.vendor.pq.mtk_smart_true_tone_support=1
-
 ro.vendor.pq.mtk_libaibld_name=libaibld.nn6.so
 ro.vendor.pq.mtk_mdp_ccorr_support=0
 ro.vendor.pq.mtk_mdp_lite_pq_support=0
