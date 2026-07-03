@@ -8,15 +8,18 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common circle stuff.
+$(call inherit-product, vendor/circle/config/common_full_phone.mk)
 
 # Inherit from rodin device
 $(call inherit-product, device/xiaomi/rodin/device.mk)
 TARGET_SHIPS_MIUICAMERA := true
+WITH_GMS := false
+CIRCLE_MAINTAINER := Zeyy
+CIRCLE_BUILDTYPE := UNOFFICIAL
 
 PRODUCT_DEVICE := rodin
-PRODUCT_NAME := lineage_rodin
+PRODUCT_NAME := circle_rodin
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := 2412DPC0AG
 PRODUCT_MANUFACTURER := xiaomi
