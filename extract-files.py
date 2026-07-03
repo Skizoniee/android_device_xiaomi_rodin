@@ -240,7 +240,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libprotobuf-cpp-full-21.12.so', 'libprotobuf-cpp-full-21.7.so'),
     (
         'vendor/bin/hw/mt6899/camerahalserver',
-        'odm/lib64/libmorpho_Depurple.so',
         'odm/lib64/camera/plugins/capture/com.xiaomi.plugin.depurple.so',
         'odm/lib64/camera/plugins/capture/com.xiaomi.plugin.filter.so',
     ): blob_fixup()

@@ -406,7 +406,6 @@ odm/lib64/libmiphone_capture_depth.so
 odm/lib64/libmiphone_dualcam_depth_aideploy.so
 odm/lib64/libmiphone_preview_bokeh.so
 odm/lib64/libmiphone_preview_depth.so
-odm/lib64/libmorpho_Depurple.so
 odm/lib64/libmpbase.so
 odm/lib64/libportrait_repair_apu.so
 odm/lib64/librfs_warp.so
@@ -930,6 +929,9 @@ vendor/lib64/vendor.xiaomi.hardware.camera.injection-service.so
 vendor/lib64/vendor.xiaomi.hardware.camera.synthetic-V1-ndk.so
 vendor/lib64/vendor.xiaomi.hardware.camera.synthetic-impl.so
 vendor/lib64/xiaomi.system.hypsys.common-V1-ndk.so
+
+# Camera - from klee OS3.0.5.0.WPJMIXM
+odm/lib64/libmorpho_Depurple.so|13ee2465eb456356d2b839503a950899ae584844
 
 # Camera-arcsoft
 odm/lib64/libarc.ion.so
