@@ -238,13 +238,13 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/com.xiaomi.immunesystem.core.so',
     ): blob_fixup()
         .replace_needed('libprotobuf-cpp-full-21.12.so', 'libprotobuf-cpp-full-21.7.so'),
+    'vendor/bin/hw/mt6899/camerahalserver': blob_fixup()
+        .add_needed('libbinder_shim.so'),
     (
-        'vendor/bin/hw/mt6899/camerahalserver',
+        'vendor/lib64/libmialgoengine.so'
         'odm/lib64/camera/plugins/capture/com.xiaomi.plugin.depurple.so',
         'odm/lib64/camera/plugins/capture/com.xiaomi.plugin.filter.so',
     ): blob_fixup()
-        .add_needed('libbinder_shim.so'),
-    'vendor/lib64/libmialgoengine.so': blob_fixup()
         .add_needed('libbinder_shim.so')
         .add_needed('libprocessgroup_shim.so')
         .call(blob_fixup_graphic_buffer_size),
