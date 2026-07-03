@@ -1,4 +1,4 @@
-# Unpinned blobs from missi-user 15 AP3A.240905.015.A2 OS2.0.204.0.VOJMIXM release-keys
+# Unpinned blobs from missi-user 15 AP3A.240905.015.A2 OS3.0.300.0.WOJEUXM release-keys
 
 # AAL
 vendor/lib64/libaal_cust.so
@@ -21,7 +21,7 @@ vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so;MODULE_SUFFIX=-vendor
 
 # Audio
 odm/lib64/vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk.so
-system/lib64/av-audio-types-aidl-V1-ndk.so
+system/lib64/av-audio-types-aidl-ndk.so:system/lib64/av-audio-types-aidl-V3-ndk.so;FIX_SONAME
 system_ext/bin/hw/android.hardware.audio.parameter_parser.service
 system_ext/etc/init/android.hardware.audio.parameter_parser.service.rc
 vendor/bin/hw/android.hardware.audio.service-aidl.mediatek
@@ -50,7 +50,6 @@ vendor/lib64/libaudiodatabase.so
 vendor/lib64/libaudiodcrflt_vendor.so
 vendor/lib64/libaudiofmtconv.so
 vendor/lib64/libaudioloudc.so
-vendor/lib64/libmispowerop.so
 vendor/lib64/libaudiopolicyconfigxml_mtk_vendor.so
 vendor/lib64/libaudioprimarydevicehalifclient.so
 vendor/lib64/libaudiosmartpamtk.so
@@ -62,6 +61,7 @@ vendor/lib64/libblisrc32_vendor.so
 vendor/lib64/libcvsd_mtk.so
 vendor/lib64/libfsmsmartpaparse.so
 vendor/lib64/libfvaudio.so
+vendor/lib64/libmispowerop.so
 vendor/lib64/libmsbc_mtk.so
 vendor/lib64/libmtklimiter_vendor.so
 vendor/lib64/libmtkshifter_vendor.so
@@ -106,15 +106,12 @@ odm/etc/spk_hp.wav
 odm/etc/stereo.wav
 odm/etc/top_spk.wav
 odm/etc/ultrasound.wav
-system_ext/bin/spkcal
-system_ext/bin/spkcal_88263s
-system_ext/bin/spkcal_88263s_m16
+system/bin/spkcal
 system_ext/bin/spkcal_88263s_m9
-system_ext/bin/spkcal_88263s_n12
-system_ext/bin/spkcal_88263s_n12a
-system_ext/bin/spkcal_88263s_o10
-system_ext/bin/spkcal_tfa
-system_ext/lib64/libtfa98xx_cal.so
+system_ext/bin/spkcal_p10
+system_ext/bin/spkcal_si_o12u
+system_ext/bin/spkcal_si_p12a
+system_ext/bin/spkcal_tfa98xx
 vendor/etc/spk_cal_silence.wav
 
 # Audio Configs
@@ -381,7 +378,7 @@ odm/lib64/camera/zsl/com.xiaomi.zsl.dsac.so
 odm/lib64/camera/zsl/com.xiaomi.zsl.hdr.so
 odm/lib64/libHISCppAlgos.so
 odm/lib64/libMiEmojiEffect.so
-odm/lib64/libMiVideoFilter.so
+odm/lib64/libMiPhotoFilter.so
 odm/lib64/libalCFR.so
 odm/lib64/libanc_dc_base.so
 odm/lib64/libanc_single_bokeh.so
@@ -414,6 +411,7 @@ odm/lib64/libmpbase.so
 odm/lib64/libportrait_repair_apu.so
 odm/lib64/librfs_warp.so
 odm/lib64/libwa_widelens_undistort.so
+system_ext/lib64/libMiVideoFilter.so
 vendor/bin/crossbuild/DataSet/SQLiteModule/db/port_select.db;MAKE_COPY_RULE_ONLY
 vendor/etc/default_pd_calibration.bin
 vendor/etc/vintf/manifest/manifest_aovservice.xml
@@ -444,7 +442,6 @@ vendor/lib64/libAF.so
 vendor/lib64/libBasicModule.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libMiMotion.so
-vendor/lib64/libMiPhotoFilter.so
 vendor/lib64/libXMFaceFocus.so
 vendor/lib64/libaaa_aaautil.so
 vendor/lib64/libaaa_afassist_V2.so
@@ -476,6 +473,7 @@ vendor/lib64/libcom.xiaomi.eventcallback.so
 vendor/lib64/libcom.xiaomi.grallocutils.so
 vendor/lib64/libcom.xiaomi.hwadapter.decoupleutil.so
 vendor/lib64/libcom.xiaomi.hwadapter.postprocinterface.so
+vendor/lib64/libcom.xiaomi.ionutils.so
 vendor/lib64/libcom.xiaomi.metadatautils.so
 vendor/lib64/libcom.xiaomi.mivihal.cpupolicy.so
 vendor/lib64/libcom.xiaomi.pluginutils.so
@@ -1223,13 +1221,13 @@ odm/etc/o10_42_02_0a_dsc_vdo_cust_silky_brightness.xml
 odm/lib64/hw/displayfeature.default.so
 odm/lib64/libMiDispDevManager.so
 odm/lib64/libadaptivehdr.so
+odm/lib64/libbarrage.so
 odm/lib64/libcolortempmode.so
 odm/lib64/libdisplaylog.so
 odm/lib64/libdither.so
 odm/lib64/libeyecare.so
 odm/lib64/libfcmintf.so
 odm/lib64/libflatmode.so
-odm/lib64/libbarrage.so
 odm/lib64/libframecapturemanager.so
 odm/lib64/libhistprocess.so
 odm/lib64/libmiBrightness.so
@@ -1263,13 +1261,9 @@ vendor/etc/dolby/dax-fs19xx-spatializer.xml
 vendor/etc/dolby/dax-fs19xx.xml
 vendor/etc/init/dms-service.rc
 vendor/etc/init/vendor.dolby.media.c2-default-service-dax.rc
+vendor/etc/media_codecs_dolby_audio.xml
 vendor/etc/vintf/manifest/dms-service.xml
 vendor/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml
-vendor/etc/media_codecs_dolby_audio.xml
-vendor/lib64/soundfx/libdlbvolaidl.so
-vendor/lib64/soundfx/libswdapaidl.so
-vendor/lib64/soundfx/libswgamedapaidl.so
-vendor/lib64/soundfx/libswspatializeraidl.so
 vendor/lib64/libcodec2_soft_ac4dec.so
 vendor/lib64/libcodec2_soft_ddpdec.so
 vendor/lib64/libcodec2_store_dolby.so
@@ -1279,6 +1273,10 @@ vendor/lib64/libdlbdsservice.so
 vendor/lib64/libdlbpreg.so
 vendor/lib64/libdmshal.so
 vendor/lib64/libspatializerparamstorage.so
+vendor/lib64/soundfx/libdlbvolaidl.so
+vendor/lib64/soundfx/libswdapaidl.so
+vendor/lib64/soundfx/libswgamedapaidl.so
+vendor/lib64/soundfx/libswspatializeraidl.so
 vendor/lib64/vendor.dolby.dms-V1-ndk.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
 
