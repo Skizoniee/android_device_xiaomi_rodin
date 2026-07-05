@@ -1539,11 +1539,11 @@ vendor/lib64/mt6899/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so
 
-# HotwordEnrollment
-product/priv-app/HotwordEnrollmentXGoogleRISCV_WIDEBAND/HotwordEnrollmentXGoogleRISCV_WIDEBAND.apk
-product/priv-app/HotwordEnrollmentYGoogleRISCV_WIDEBAND/HotwordEnrollmentYGoogleRISCV_WIDEBAND.apk
-system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
-system_ext/framework/com.android.hotwordenrollment.common.util.jar
+# HotwordEnrollment - from OS2.0.204.0.VOJMIXM
+product/priv-app/HotwordEnrollmentXGoogleRISCV_WIDEBAND/HotwordEnrollmentXGoogleRISCV_WIDEBAND.apk|9463ab6fcf91f03294b275c736ec71904303d5b4
+product/priv-app/HotwordEnrollmentYGoogleRISCV_WIDEBAND/HotwordEnrollmentYGoogleRISCV_WIDEBAND.apk|93cfac32213d2e3b573ac8618ea7d4ea39de52f1
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|01b74943dc0ae9353883298d36fba94128536c9e
+system_ext/framework/com.android.hotwordenrollment.common.util.jar|375acb133095c92d7a411f1c46fae46637f4c5c6
 
 # IMS
 system_ext/bin/vtservice
