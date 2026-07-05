@@ -124,7 +124,7 @@ ro.vendor.mtk_svp_on_mtee_support=1
 
 # DRM
 drm.service.enabled=true
-ro.netflix.bsp_rev=MTK6899-37606-1
+ro.netflix.bsp_rev=MT6899-39863-1
 ro.vendor.mtk_widevine_drm_l3_support=1
 
 # FRP

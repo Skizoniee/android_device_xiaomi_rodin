@@ -24,4 +24,9 @@ bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.sap.server.enabled=false
 bluetooth.profile.vcp.controller.enabled=true
 
+# Device model
 ro.product.marketname=POCO X7 Pro
+
+# Netflix
+ro.netflix.channel=004ee050-1a17-11e9-bb61-6f1da27fb55b
+ro.netflix.signup=1
