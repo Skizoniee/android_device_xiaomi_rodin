@@ -27,10 +27,6 @@ on early-init && property:ro.build.type=userdebug
     chmod 0755 /sys/kernel/debug
     setprop persist.dbg.keep_debugfs_mounted true
 
-    # Workarround for cache
-    rm /data/resource-cache
-    rm /data/system/package_cache 
-
 on init
     write /proc/bootprof "INIT:init"
 
