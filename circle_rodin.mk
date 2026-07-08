@@ -14,7 +14,7 @@ $(call inherit-product, vendor/circle/config/common_full_phone.mk)
 # Inherit from rodin device
 $(call inherit-product, device/xiaomi/rodin/device.mk)
 TARGET_SHIPS_MIUICAMERA := true
-WITH_GMS := false
+WITH_GMS := true
 CIRCLE_MAINTAINER := Zeyy
 CIRCLE_BUILDTYPE := UNOFFICIAL
 
