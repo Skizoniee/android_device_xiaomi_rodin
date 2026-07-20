@@ -18,6 +18,7 @@ package com.xiaomi.settings.corecontrol;
 
 import android.os.Bundle;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.xiaomi.settings.R;
 
 public class CoreControlActivity extends CollapsingToolbarBaseActivity {
     private static final String TAG_CORECONTROL = "corecontrol";
@@ -25,8 +26,13 @@ public class CoreControlActivity extends CollapsingToolbarBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction().replace(
-            com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-            new CoreControlFragment(), TAG_CORECONTROL).commit();
+        setContentView(R.layout.activity_game_bar_app_selector);
+        setTitle(R.string.core_control_title);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.content_frame, new CoreControlFragment(), TAG_CORECONTROL)
+                    .commit();
+        }
     }
 }
