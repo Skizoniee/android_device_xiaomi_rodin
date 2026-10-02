@@ -8,3 +8,5 @@ ro.vendor.vodata_support=1
 wifi.direct.interface=p2p0
 wifi.interface=wlan0
 wifi.tethering.interface=ap0
+
+ro.lunaris.maintainer=spiderman

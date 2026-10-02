@@ -14,6 +14,9 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from rodin device
 $(call inherit-product, device/xiaomi/rodin/device.mk)
 TARGET_SHIPS_MIUICAMERA := true
+TARGET_CUSTOM_UDFPS := true
+WITH_GMS := true
+USE_REALITY_ENGINE := false 
 
 PRODUCT_DEVICE := rodin
 PRODUCT_NAME := lineage_rodin
